@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "976574562178",
+    "project_id": "dreams-ahlamakom-1631c",
+    "storage_bucket": "dreams-ahlamakom-1631c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:976574562178:android:431fe71b81c781190ad99b",
+        "android_client_info": {
+          "package_name": "org.evillage.dreams"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "976574562178-f1anuj4i95vjmpc33fnh7larlcjfd8bi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.evillage.dreams",
+            "certificate_hash": "28a5591b70bebc1fa3c149a147bcc850ad20ddc0"
+          }
+        },
+        {
+          "client_id": "976574562178-l85n1e60v9b9l6eggh9le2atnc8ctg6u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.evillage.dreams",
+            "certificate_hash": "8363688eb9d525959d5beb2c1cf46a9bc69b7de9"
+          }
+        },
+        {
+          "client_id": "976574562178-dkjk5rrl57gtu4bkeh2u94eo7640sdl0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuQZmufc0Q49JLzORcWIUVv4MifVEs9xU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "976574562178-dkjk5rrl57gtu4bkeh2u94eo7640sdl0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

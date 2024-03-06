@@ -1,0 +1,21 @@
+export enum PROFILE_BUTTON_ACTION {
+    CHANGE_NAME = 'CHANGE_NAME',
+    CHANGE_EMAIL = 'CHANGE_EMAIL',
+    CHANGE_PASSWORD = 'CHANGE_PASSWORD',
+}
+ 
+export enum OTP_NAVIGATION_OPTION{
+    REGISTER_SCREEN = 'REGISTER_SCREEN',
+    CHANGE_EMAIL = 'CHANGE_EMAIL',
+    FORGOT_PASSWORD_SCREEN = 'FORGOT_PASSWORD_SCREEN',
+}
+ 
+export enum IMAGE_PICK_OPTION {
+    CAMERA = 'CAMERA',
+    GALLERY= 'GALLERY',
+}
+
+export enum SUBSCRIPTION_TYPE{
+    MONTHLY  =  'org.evillage.dreamsmonthly' ,
+    YEARLY      =  'org.evillage.dreamsyearly'
+}

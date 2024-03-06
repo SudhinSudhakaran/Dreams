@@ -1,0 +1,10 @@
+export const Colors = {
+  WHITE: '#ffffff',
+  BACKGROUND_COLOR: '#93C8DC',
+  PRIMARY_COLOR: '#1280AF',
+
+  PLACEHOLDER_COLOR: '#D5D5D5',
+  TITLE_COLOR: '#142732',
+  BUTTON_COLOR: '#000000',
+  SIGNUP_TEXT_COLOR: 'blue',
+};

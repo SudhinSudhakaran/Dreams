@@ -1,0 +1,156 @@
+import {
+  FlatList,
+  Linking,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import React, {useLayoutEffect, useState} from 'react';
+import {Components} from '../../../components';
+import {
+  useFocusEffect,
+  useNavigation,
+  useRoute,
+} from '@react-navigation/native';
+import {useSelector, useDispatch} from 'react-redux';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {
+  responsiveFontSize,
+  responsiveHeight,
+  responsiveWidth,
+} from 'react-native-responsive-dimensions';
+import {Colors, Fonts, Globals} from '../../../constants';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import I18n from '../../../i18n';
+import Loader from './Loader';
+import {useNetworkManager} from '../../../helpers/apiConnection/NetworkManager';
+import ApiConnections from '../../../helpers/apiConnection/ApiConnections';
+import {
+  initConnection,
+  purchaseUpdatedListener,
+  purchaseErrorListener,
+  acknowledgePurchaseAndroid,
+  getAvailablePurchases,
+  getSubscriptions,
+  requestSubscription,
+  requestPurchase,
+} from 'react-native-iap';
+import Toast from 'react-native-simple-toast';
+const SubscriptionScreen = () => {
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
+  const {get, post} = useNetworkManager();
+  const route = useRoute();
+
+  // values from redux
+  const {userDetails, currentLanguage} = useSelector(state => state.user);
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState([]);
+
+  useFocusEffect(
+    React.useCallback(() => {
+      fetchData?.();
+      return () => {};
+    }, []),
+  );
+
+  const fetchData = async () => {
+    setIsLoading(true);
+
+    let formdata = new FormData();
+    formdata.append('appId', Globals.APP_ID);
+    formdata.append(
+      ApiConnections.KEYS.LANGUAGE,
+      currentLanguage === 'ar' ? 1 : 2,
+    );
+    formdata.append(ApiConnections.KEYS.DISCOUND_CODE, '');
+
+    const [isSuccess, message, response] = await post(
+      ApiConnections.SUBSCRIPTION_LIST,
+      formdata,
+    );
+
+    if (isSuccess) {
+      setIsLoading(false);
+      setData(response?.applications?.[0]);
+    } else {
+      setIsLoading(false);
+      Toast.show(message);
+    }
+    console.log('🚀 ~ fetchData ~ APPLICATIONS_:', isSuccess, message, data);
+  };
+
+  return (
+    <Components.NetworkWrapper>
+      <Components.CustomStatusBar />
+      <Components.Header
+        title={!isLoading ? data?.name?.toUpperCase() : ''}
+        backButtonAction={navigation?.goBack}
+        showBackButton={true}
+      />
+      {!isLoading ? <></> : <Loader />}
+    </Components.NetworkWrapper>
+  );
+};
+
+export default SubscriptionScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    width: responsiveWidth(27),
+    height: responsiveHeight(18),
+    marginTop: responsiveHeight(2),
+    marginRight: responsiveWidth(4),
+    backgroundColor: '#ffffff',
+  },
+  appIcon: {
+    width: responsiveWidth(35),
+    height: responsiveWidth(40),
+    alignSelf: 'center',
+
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: Colors.BACKGROUND_COLOR,
+  },
+  shadowStyle: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0.5,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
+  },
+  appName: {
+    fontFamily: Fonts.INTER_MEDIUM,
+    fontSize: responsiveFontSize(2),
+  },
+  tag: {
+    fontFamily: Fonts.INTER_REGULAR,
+    fontSize: responsiveFontSize(1.5),
+    marginTop: responsiveHeight(1),
+  },
+  screenShortContainer: {
+    width: responsiveWidth(28),
+    height: responsiveHeight(18),
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0.5,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
+
+    marginRight: responsiveWidth(4),
+    // borderWidth: StyleSheet.hairlineWidth,
+  },
+  screenShort: {
+    width: responsiveWidth(28),
+    height: responsiveHeight(18),
+  },
+});

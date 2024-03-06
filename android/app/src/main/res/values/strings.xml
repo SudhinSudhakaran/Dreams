@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Dreams Ahlamakom</string>
+    <string name="facebook_app_id">310702401623716</string>
+    <string name="facebook_client_token">7d1b37dad965668f44a1d28654162581</string>
+    <string name="fb_login_protocol_scheme">fb310702401623716</string>
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>976574562178-2l54gqjpbf7343asti1qcshpss54va5h.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.976574562178-2l54gqjpbf7343asti1qcshpss54va5h</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>976574562178-f1anuj4i95vjmpc33fnh7larlcjfd8bi.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDQR0tfvR9_nPyN2lS-PTZ9kxJTuTGDyEw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>976574562178</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.evillage.dreams</string>
+	<key>PROJECT_ID</key>
+	<string>dreams-ahlamakom-1631c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dreams-ahlamakom-1631c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:976574562178:ios:a39044a358bf43460ad99b</string>
+</dict>
+</plist>
